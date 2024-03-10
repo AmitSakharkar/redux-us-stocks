@@ -58,6 +58,8 @@ padding-left: 20px;
     font-optical-sizing: auto;
     font-style: normal;
     font-variation-settings: "slnt" 0;
+    padding: 15px 0px;
+    border-bottom: 1px dotted #DEE1E6;
 }
 
 .stocks-details-header{
@@ -72,18 +74,55 @@ padding-left: 20px;
 .stocks-details-title{
     width: 90%;
     height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 15px;
+}
+
+.stocks-details-date {
+    display: flex;
+    justify-content: space-between;
+    label {
+        font-family: "Inter", sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0em;
+        color: #565D6D;
+    }
+}
+.stocks-title {
+    font-family: "Inter", sans-serif;
+font-size: 16px;
+font-weight: 700;
+line-height: 26px;
+letter-spacing: 0em;
+text-align: left;
+    color: #171A1F;
 }
 .stocks-details-body{
-
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #171A1F;
+    padding: 15px 0px;
 }
 .stocks-details-footer{
-
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#171A1F;     
 }
 .bottom-pagination{
     display: flex;
     width: 89%;
     justify-content: end;
-    bottom: 50px;
-    right: 50px;
-    position: absolute;
+    padding: 30px 0px;
 }

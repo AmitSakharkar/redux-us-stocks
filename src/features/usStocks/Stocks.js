@@ -126,11 +126,11 @@ function Stocks() {
                     <div className={styles['stocks-details-header']}>
                         <img alt='' src={data.url+''+data.image}  className={styles['stocks-details-img']}/>
                         <div className={styles['stocks-details-title']}>
-                            <div>
+                            <div className={styles['stocks-details-date']}>
                                 <label>{Moment(data.date).format('LL')}</label>
                                 <label>{data.source}</label>
                             </div>
-                            <div>
+                            <div className={styles['stocks-title']}>
                                 <label>{data.title}</label>
                             </div>
                         </div>
