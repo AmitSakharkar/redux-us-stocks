@@ -8,6 +8,7 @@ import Stack from '@mui/material/Stack';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import styles from './Stocks.module.css';
+import DefaultImage from '../../assets/default-news.png';
 // import StraightIcon from '@mui/icons-material/Straight';
 function Stocks() {
     const dispatch = useDispatch();
@@ -124,7 +125,7 @@ function Stocks() {
             {_DATA.currentData().length > 0 ? _DATA.currentData().map((data, i) => (
                 <div className={styles['stocks-details']}>
                     <div className={styles['stocks-details-header']}>
-                        <img alt='' src={data.url+''+data.image}  className={styles['stocks-details-img']}/>
+                        <img alt='' src={DefaultImage || data.url+''+data.image}  className={styles['stocks-details-img']}/>
                         <div className={styles['stocks-details-title']}>
                             <div className={styles['stocks-details-date']}>
                                 <label>{Moment(data.date).format('LL')}</label>
