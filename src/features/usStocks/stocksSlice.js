@@ -54,10 +54,6 @@ export const handleStocksData = (data) => (dispatch) => {
 export const handleStocksDataFilter = (selectedCategory, selectedAuthor, selectedSort) => (dispatch, getState) => {
   const currentStocksData = stocksDataBackup(getState());
 
-  console.log('selectedCategory ===> ', selectedCategory.length);
-  console.log('selectedAuthor ===> ', selectedAuthor.length);
-  console.log('selectedSort ===> ', selectedSort.length);
-
   if (selectedCategory.length < 1 && selectedAuthor.length < 1 && selectedSort.length < 1) {
     dispatch(setStocksData(currentStocksData))
   } else {
@@ -72,7 +68,6 @@ export const handleStocksDataFilter = (selectedCategory, selectedAuthor, selecte
     const finalCondition=condition.substring(2, condition.length);
     const fArray=currentStocksData.filter(stuff => eval(finalCondition));
     dispatch(setStocksData(fArray));
-    console.log('filtered array ===> ', fArray)
 
   }
 }

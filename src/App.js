@@ -20,7 +20,6 @@ function App() {
         dispatch(setCategory([]));
         dispatch(setAuthor([]));
         setIsFetchFailed(true)
-        console.log(err);
       }
     }
   useEffect(() => {    
