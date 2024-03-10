@@ -1,56 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import React, { useEffect, useState } from 'react';
+import Stocks from './features/usStocks/Stocks';
+import NotFound from './features/notFound/NotFound';
+import { useDispatch } from 'react-redux';
+import { handleStocksData, setStocksData, setCategory, setAuthor } from './features/usStocks/stocksSlice';
 import './App.css';
 
 function App() {
+  const  [isFetchFailed, setIsFetchFailed] = useState(true);
+  const dispatch = useDispatch();
+  const getStocksData = async () => {
+    try {
+    let url = 'https://dev-storm-rest-api.pantheonsite.io/api/v1/news';
+    const response = await fetch(url);
+    const data = await response.json();
+        dispatch(handleStocksData(data));
+        setIsFetchFailed(false);
+    } catch (err) {
+        dispatch(setStocksData([]));
+        dispatch(setCategory([]));
+        dispatch(setAuthor([]));
+        setIsFetchFailed(true)
+        console.log(err);
+      }
+    }
+  useEffect(() => {    
+    getStocksData();
+  },[]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      { isFetchFailed ? <NotFound /> : <Stocks />}
     </div>
   );
 }

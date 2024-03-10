@@ -1,0 +1,89 @@
+.stocks-container {
+    display: flex;
+    width: 95%;
+    height: 100vh;
+    gap: 20px;
+    padding: 30px;
+
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+}
+
+.filter-container {
+    height: 70vh;
+    border-radius: 6px;
+    width: 35vw;
+    border: 0.5px dotted grey;
+}
+.filter-items {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 16px;
+}
+.filter-label {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    width: 80%;
+    background-color: #F8F9FA;
+    color: #171A1F;
+    font-family: "Inter", sans-serif;
+font-size: 16px;
+font-weight: 700;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+margin-top: 10px;
+padding-left: 20px;
+}
+.filter-checkboxes {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    
+}
+.stocks-details {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+}
+
+.stocks-details-header{
+    display: flex;
+    align-items: center;
+}
+.stocks-details-img{
+    height: 100px;
+    width: 100px;
+    border-radius: 15px;
+}
+.stocks-details-title{
+    width: 90%;
+    height: 100px;
+}
+.stocks-details-body{
+
+}
+.stocks-details-footer{
+
+}
+.bottom-pagination{
+    display: flex;
+    width: 89%;
+    justify-content: end;
+    bottom: 50px;
+    right: 50px;
+    position: absolute;
+}
